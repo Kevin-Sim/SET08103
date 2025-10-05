@@ -57,7 +57,7 @@ You need to set-up your application as [last week](../lab02).  Check that everyt
 
 ## Defining User Stories
 
-Our job is to define the initial requirements for the system to be developed.  We will do this by specifying **User Stories** (see [Lecture 10](../../lectures/lecture10) for more details).  A user story has the following form:
+Our job is to define the initial requirements for the system to be developed.  We will do this by specifying **User Stories** (see [unit05b](../../units/unit05/unit05b) for more details).  A user story has the following form:
 
 > As a *role* I want *feature* so that *value*.
 
