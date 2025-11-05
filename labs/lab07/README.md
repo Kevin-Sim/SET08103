@@ -145,7 +145,7 @@ We have set `<finalName>` and stated we do not want the ID attached (`<appendass
 Now we need to update the `Dockerfile` for the application to use the new JAR file name, and to provide the correct location for the database.  The updated `Dockerfile` is below.
 
 ```dockerfile
-FROM openjdk:latest
+FROM amazoncorretto:17
 COPY ./target/devops.jar /tmp
 WORKDIR /tmp
 ENTRYPOINT ["java", "-jar", "devops.jar", "db:3306", "30000"]

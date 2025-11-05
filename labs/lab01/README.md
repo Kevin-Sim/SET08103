@@ -576,7 +576,7 @@ To finish our process we need to create a Dockerfile in IntelliJ.  **Right-click
 Call the file **Dockerfile** and click **OK**.  Select **Yes** to add it to the Git repository.  The contents of the file are as follows:
 
 ```docker
-FROM openjdk:latest
+FROM amazoncorretto:17
 COPY ./target/classes/com /tmp/com
 WORKDIR /tmp
 ENTRYPOINT ["java", "com.napier.sem.App"]
@@ -616,7 +616,7 @@ REPOSITORY          TAG                 IMAGE ID            CREATED             
 test-dockerfile     latest              4482338d49b4        3 hours ago         81.1MB
 hello-world         latest              2cb0d9787c4d        2 days ago          1.85kB
 nginx               latest              3c5a05123222        7 days ago          109MB
-openjdk             latest              fe9f7b1e4fa0        10 days ago         624MB
+amazoncorretto      17                  af174432b2ea        5 days ago          465MB
 ubuntu              latest              113a43faa138        5 weeks ago         81.1MB
 ```
 

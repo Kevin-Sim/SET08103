@@ -530,7 +530,7 @@ MongoClient mongoClient = new MongoClient("mongo-dbserver");
 We are now explicitly connecting to the server called `mongo-dbserver`, which is the name we gave to our MongoDB container.  To test this, we need to update our Dockerfile:
 
 ```docker
-FROM openjdk:latest
+FROM amazoncorretto:17
 COPY ./target/devops-0.1.0.1-jar-with-dependencies.jar /tmp
 WORKDIR /tmp
 ENTRYPOINT ["java", "-jar", "devops-0.1.0.1-jar-with-dependencies.jar"]
