@@ -44,7 +44,7 @@ Create a new Repository
 
   ![New Repo](img/New%20Repo.png)
 
-Name the Repo Whatever you like and a README file to it. Add a license as well (not shown here as I orgot but it is used in Lab 2)
+Name the Repo Whatever you like and a README file to it. Add a license as well (not shown here as I forgot but it is used in Lab 2)
 
 ![RepoAddReadme](img/RepoAddReadme.png)
 
@@ -56,7 +56,7 @@ Now copy the GitHub URL
 
   ![CopyUrl](img/CopyUrl.png)
 
-  Open a command prompt anywhere on your PC
+Open a command prompt anywhere on your PC or if Using a University PC in D02 in C:\Users\40000xxxx (your matric number) 
 
   Use the command git clone <URL> to clone your Repository from GitHub
 
@@ -66,7 +66,7 @@ Now copy the GitHub URL
 
   
 
-  ![gitClone](img/gitClone2.png)
+  ![gitClone](img/gitclone2.png)
 
   
 
@@ -88,9 +88,9 @@ IntelliJ IDEA is the Integrated Development Environment that we will be using on
 
 Create a new project in the folder where you cloned your repository. This needs to be stored on the C:\ drive in D02 as intellij can't deal with network drives anymore (I have been told it works with OneDrive)
 
-You will have a directory in D02 in C:\Users\40000xxxx (your matric number)
+You will have a directory in D02 in C:\Users\40000xxxx (your matric number) where your repo should be cloned to 
 
-Give The project the same name as you used for the GitHub repo as shown below. I have named it SEMCode
+Give the project the same name as you used for the GitHub repo as shown below. I have named it SEMCode
 
 ![](img/NewProject.png)
 
