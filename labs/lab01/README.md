@@ -17,11 +17,58 @@ You can use your own laptop for the module or the machines in D02. The instructi
 After this lab you will be able to:
 
 - **Setup** a *development environment in IntelliJ.*
+
 - **Setup** a *GitHub repository.*
+
 - **Pull** a *Docker container.*
+
 - **Manage** a *Docker container using basic commands.*
+
 - **Define** a *Dockerfile to create your own container.*
+
 - **Deploy** to a *Docker container from IntelliJ.*
+
+## Create a Github repository  
+
+There are different ways to create a new git repository. You could (but don't) open a command prompt inside any folder (and enter the command 
+
+  ```bash
+  git init
+  ```
+
+However the following method saves time integrating our local repository (Git) with our distributed (online) GitHub repository so the following way is easier
+
+Create a GitHub account. I suggest using your Uni email but you can use your own.
+
+Create a new Repository
+
+  ![New Repo](H:/My%20Drive/Dropbox/Teaching/2026-2027-01-08103%20Software%20Engineering%20Methods/SET08103/labs/lab01/img/New%20Repo.png)
+
+Name the Repo Whatever you like and a README file to it. Add a license as well (not shown here as I orgot but it is used in Lab 2)
+
+![RepoAddReadme](H:/My%20Drive/Dropbox/Teaching/2026-2027-01-08103%20Software%20Engineering%20Methods/SET08103/labs/lab01/img/RepoAddReadme.png)
+
+  
+
+If you need to add a licence later see https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository
+
+Now copy the GitHub URL
+
+  ![CopyUrl](H:/My%20Drive/Dropbox/Teaching/2026-2027-01-08103%20Software%20Engineering%20Methods/SET08103/labs/lab01/img/CopyUrl.png)
+
+  Open a command prompt anywhere on your PC
+
+  Use the command git clone <URL> to clone your Repository from GitHub
+
+  ```bash
+  git clone https://path
+  ```
+
+  
+
+  ![gitClone](H:/My%20Drive/Dropbox/Teaching/2026-2027-01-08103%20Software%20Engineering%20Methods/SET08103/labs/lab01/img/gitClone2.png)
+
+  
 
 ## IntelliJ Setup
 
@@ -39,11 +86,11 @@ IntelliJ IDEA is the Integrated Development Environment that we will be using on
 
 ## Open IntelliJ
 
-Create a new project. This needs to be stored on the C:\ drive in D02 as intellij can't deal with network drives anymore (I have been told it works with OneDrive)
+Create a new project in the folder where you cloned your repository. This needs to be stored on the C:\ drive in D02 as intellij can't deal with network drives anymore (I have been told it works with OneDrive)
 
 You will have a directory in D02 in C:\Users\40000xxxx (your matric number)
 
-Create a new Maven Project as shown below. I have named it SEMCode
+Give The project the same name as you used for the GitHub repo as shown below. I have named it SEMCode
 
 ![](img/NewProject.png)
 
@@ -52,8 +99,6 @@ Create a new Maven Project as shown below. I have named it SEMCode
 You will be presented with the following 
 
 ![Code](img/Code.png)
-
-
 
 The main window shows the maven setup file (pom.xml)
 
@@ -73,70 +118,18 @@ On the left we can see the project structure.
 
 IntelliJ compiles the code to the target/classes folder that has now appeared on the left hand side in a folder structure the same as the package name of the source code files
 
-## Integrate with GitHub
+ Lets ignore some stuff
 
-Lets ignore some stuff
-
-Open the .gitignore file and replace everything with the following
+  Open the .gitignore file and replace everything with the following
 
 ```
-target/
-.mvn/
-.idea/
-
+  target/
+  .mvn/
+  .idea/
+  
 ```
 
-Now lets get started with git and GitHub
-
-There are different ways to create a new repository. You could (but don't) open a command prompt inside your project folder (you can do this in IntelliJ using the icon third from bottom left) and create a new git repository by typing
-
-```bash
-git init
-```
-
-However the following method saves time integrating our local repository (Git) with our distributed (online) GitHub repository so the following way is easier
-
-Create a GitHub account. I suggest using your Uni email but you can use your own.
-
-Create a new Repository
-
-![New Repo](img/New Repo.png)
-
-Name the Repo the same as your Project and a README file to it![RepoAddReadme](img/RepoAddReadme.png)
-
-Now copy the GitHub URL
-
-![CopyUrl](img/CopyUrl.png)
-
-Open a command prompt anywhere on your PC
-
-Use the command git clone <URL> to clone your Repository from GitHub
-
-```bash
-git clone https://path
-```
-
-
-
-![gitClone](img/gitClone2.png)
-
-
-
-Open the folder you have just cloned. Select and copy all files to you project directory. Make sure hidden files are visible so that the .git directory is visible.
-
-![copyfiles](img/copyfiles.png)
-
-
-
-Your project folder should now look like
-
-![proFolder](img/proFolder.png)
-
-
-
-Go Back to IntelliJ
-
-Open a terminal and type the following commands
+Open a terminal (3rd button from bottom left) and type the following commands
 
 ```bash
 git add .
@@ -146,7 +139,7 @@ git push
 
 The first time you do this a pop up should appear asking you to verify your account. Select verify with browser then click Authenticate in the GitHub page that appears
 
-The console output should show that the three commands were successful and the repository shoul have updated on GitHub
+The console output should show that the three commands were successful and the repository should have updated on GitHub
 
 ![successcommit](img/successcommit.png)
 
@@ -180,7 +173,7 @@ Oncer Docker is Running you should see
 
 Go back to IntelliJ, open the service tab (bottom left) and double click the Docker Icon to Connect. You should see the following in the service window at the bottom.
 
-![InteliDocker](H:\My Drive\Dropbox\Teaching\2026-2027-01-08103 Software Engineering Methods\lab01\img\InteliDocker.png)
+![InteliDocker](img/InteliDocker.png)
 
 
 
@@ -236,9 +229,11 @@ c147e0b0386f50bc62c39ddeb422633aae6104093f28aa1bfc98fc18243c860b
 
 But is a web server running? We can test that by opening up a web browser and going to http://localhost:8080/
 
-[![Nginx Running](https://github.com/Kevin-Sim/SET08103/raw/master/labs/lab01/img/nginx-running.png)](https://github.com/Kevin-Sim/SET08103/blob/master/labs/lab01/img/nginx-running.png)
+![Nginx Running](img/nginx-running.png)
 
 If you see the Nginx welcome screen congratulations! You are up and running with your first container.
+
+
 
 #### Stopping Containers
 
@@ -500,5 +495,5 @@ Copy paste markdown code into your README file
 
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/t/Kevin-Sim/SEMCode/master)
 
-The code gerated while making these lab notes is at https://github.com/Kevin-Sim/SEMCode
+The code generated while making these lab notes is at https://github.com/Kevin-Sim/SEMCode
 
