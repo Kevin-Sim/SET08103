@@ -42,11 +42,11 @@ Create a GitHub account. I suggest using your Uni email but you can use your own
 
 Create a new Repository
 
-  ![New Repo](H:/My%20Drive/Dropbox/Teaching/2026-2027-01-08103%20Software%20Engineering%20Methods/SET08103/labs/lab01/img/New%20Repo.png)
+  ![New Repo](img/New%20Repo.png)
 
 Name the Repo Whatever you like and a README file to it. Add a license as well (not shown here as I orgot but it is used in Lab 2)
 
-![RepoAddReadme](H:/My%20Drive/Dropbox/Teaching/2026-2027-01-08103%20Software%20Engineering%20Methods/SET08103/labs/lab01/img/RepoAddReadme.png)
+![RepoAddReadme](img/RepoAddReadme.png)
 
   
 
@@ -54,7 +54,7 @@ If you need to add a licence later see https://docs.github.com/en/communities/se
 
 Now copy the GitHub URL
 
-  ![CopyUrl](H:/My%20Drive/Dropbox/Teaching/2026-2027-01-08103%20Software%20Engineering%20Methods/SET08103/labs/lab01/img/CopyUrl.png)
+  ![CopyUrl](img/CopyUrl.png)
 
   Open a command prompt anywhere on your PC
 
@@ -66,7 +66,7 @@ Now copy the GitHub URL
 
   
 
-  ![gitClone](H:/My%20Drive/Dropbox/Teaching/2026-2027-01-08103%20Software%20Engineering%20Methods/SET08103/labs/lab01/img/gitClone2.png)
+  ![gitClone](img/gitClone2.png)
 
   
 
@@ -78,7 +78,7 @@ IntelliJ, Docker and Git can be downloaded to your own machine using the links b
 
 **Docker desktop available @ https://www.docker.com/products/docker-desktop  (see below re Docker 4.44.1)**
 
-**Git @ https://git-scm.com/install/windows **
+**Git @ ** https://git-scm.com/install/windows
 
 Note that I ran into issues at home after trying the latest version of IntelliJ with Java 25 and the latest version of Docker. I am therefore writing this for Java 17 and Docker [4.44.1](https://docs.docker.com/desktop/release-notes/#4441)
 
