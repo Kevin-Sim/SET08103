@@ -304,13 +304,13 @@ We will create these four tests, updating our `printSalaries` code as required.
 
 ### Unit Tests for Printing Salaries
 
-First, **delete the existing test file**.  We don't want it confusing the test results.  Then **add a new package to `src/test/java` called `com.napier.devops`**.  Finally, we need to update our test configuration.  Change it to the following, where we run all tests in a package:
+First, **delete the existing test file**.  We don't want it confusing the test results.  Then **add a new package to `src/test/java` called `com.napier.devops`**, and inside this package create AppTest.java file.  Finally, we need to update our test configuration.  Change it to the following, where we run all tests in a package:
 
 ![IntelliJ Package Tests](img/intellij-package-tests.png)
 
 #### Employees is `null`
 
-First we will add the test to check what happens when we pass `null` to `printSalaries`.  We don't want any error to occur, so really we just want to call the method.  The test code is:
+First we will add the test to check what happens when we pass `null` to `printSalaries`.  We don't want any error to occur, so really we just want to call the method.  The test code for AppTest.java is:
 
 ```java
 package com.napier.devops;
@@ -377,8 +377,8 @@ Let us test what happens when `employees` is empty:
 @Test
 void printSalariesTestEmpty()
 {
-    ArrayList<Employee> employess = new ArrayList<Employee>();
-    app.printSalaries(employess);
+    ArrayList<Employee> employees = new ArrayList<Employee>();
+    app.printSalaries(employees);
 }
 ```
 
@@ -392,9 +392,9 @@ Our next test will try and print a list with a `null` value in it:
 @Test
 void printSalariesTestContainsNull()
 {
-    ArrayList<Employee> employess = new ArrayList<Employee>();
-    employess.add(null);
-    app.printSalaries(employess);
+    ArrayList<Employee> employees = new ArrayList<Employee>();
+    employees.add(null);
+    app.printSalaries(employees);
 }
 ```
 
