@@ -276,7 +276,7 @@ Although the container has stopped it has not been removed from your system. To 
 docker ps -a
 ```
 
-You will get output similar to the following:
+You will get output similar to the following.
 
 ![containerlist](img/containerlist.png)
 
