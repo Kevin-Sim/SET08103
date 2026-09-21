@@ -27,7 +27,7 @@ At the end of the last lab we had a working application that we could deploy to 
 
 -   A **pom.xml** Maven build file, which we have not explored further yet.
     
--   An **App.java** code file that contains our current code which is just a *Hello World* example.
+-   An **App.java** code file that contains our current code which is just a *Hello World* example. (It was called Main last week. Right click the file and use rename to change it to App. Modify the Dockerfile accordingly)
     
 -   A **Dockerfile** that specifies how to run our application in a separate Docker container.
 
@@ -61,7 +61,11 @@ If you have not saved login credentials you may be asked to provide these The si
 
 Note that GitHub now prefers a token for authentication rather than a password.
 
-### Creating a GitHub token
+### Creating a GitHub token (possibly not needed)
+
+Standard password login seems to work fine in IntelliJ with GitHub now so skip this step for now. If you have issues authenticating come back to this step.
+
+[Next Section](##Adding CI to Your Repository)
 
 Go to your GitHub account. From the menu at the top right select settings
 
@@ -99,7 +103,7 @@ Now we need to check that everything works correctly. Perform the following step
 
 Hopefully everything has worked and we are back to the point we left off at last week. **Remember these steps**. You will need to repeat them every time you pull back your project to a new local system.
 
-Adding CI to Your Repository
+## Adding CI to Your Repository
 ----------------------------
 
 We can now set-up GitHub Actions. On your GitHub repository select the actions tab at the top then select *set up workflow yourself*
