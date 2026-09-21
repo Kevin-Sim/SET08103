@@ -140,7 +140,7 @@ jobs:
       - name: Run image
         run: docker run --name devopscontainer -d devopsimage
       - name: view logs
-        run: docker logs devopscontainer
+        run: docker logs -f devopscontainer
 ```
 
 To sync our local version do a pull from IntelliJ 
