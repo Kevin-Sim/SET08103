@@ -129,10 +129,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up JDK 17
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v5
         with:
           java-version: '17'
-          distribution: 'adopt'
+          distribution: 'temurin'
       - name: Compile with Maven
         run: mvn compile
       - name: Build Docker Image
