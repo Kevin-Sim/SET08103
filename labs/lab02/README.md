@@ -65,7 +65,7 @@ Note that GitHub now prefers a token for authentication rather than a password.
 
 Standard password login seems to work fine in IntelliJ with GitHub now so skip this step for now. If you have issues authenticating come back to this step.
 
-[Next Section](##Adding CI to Your Repository)
+[Next Section](#adding-ci-to-your-repository)
 
 Go to your GitHub account. From the menu at the top right select settings
 
