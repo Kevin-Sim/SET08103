@@ -488,7 +488,7 @@ We have added two new sections:
 
 1. `properties` - here we are telling Maven to produce Java 8 code (1.8).
 2. `build` - there is quite a bit going on here.  You can happily reuse the code though:
-    - We are defining how Maven asdevopsbles the JAR file.
+    - We are defining how Maven builds the JAR file.
     - We are telling Maven which class to run when the JAR is executed (`mainClass`).
     - We are telling Maven to build the `jar-with-dependencies` - in other words pull in the MongoDB code.
 
