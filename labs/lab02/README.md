@@ -5,7 +5,7 @@ In this lab we will automate our build process using [GitHub Actions] (https://g
 
 ### Behavioural Objectives
 
-After this lab you will be able to:
+After this lab you will be able to:-
 
 -   \[ \] **Pull your project** to *return to your previous development state.*
 
