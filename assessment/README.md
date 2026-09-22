@@ -157,7 +157,7 @@ Note that Teaching starts in Week 2. Week Commencing 15th September
 
 1. Week 4 Code Review 1 (25% of CW mark).
 2. Week 6 Code Review 2 (25% of CW mark).
-3. Week 10 Code Review 3 (25% of CW mark).
+3. Week 9 Code Review 3 (25% of CW mark).
 4. Week 12 Code Review 4 (25% of CW mark).
 
 The code reviews will take place during your usual Lab sessions.  Each group will be given **15 minutes maximum** for the code review.  Your group will be **allocated a time for the code review**.  The details of the individual review points are below.  These meetings **must be attended** at the **stated time**.  Guidelines for grading the group:
