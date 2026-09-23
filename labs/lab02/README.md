@@ -446,21 +446,52 @@ We are going to undertake the following steps:
 
 So far we have not been doing good practice.  For Java, JAR (Java ARchive) files should be deployed and not individual code files as we have been doing.  The advantage of a JAR file is it can contain library dependencies, such as the MongoDB one we have added.  Maven can build this for us automatically.
 
-First we must update our `pom.xml` file.  Add the following below the `dependencies` section:
+First we must update our `pom.xml` file.  There is quite a lot in this but it is fairly self explanatory 
 
 ```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.napier.sem</groupId>
+    <artifactId>semCW</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver</artifactId>
+            <version>3.6.4</version>
+        </dependency>
+    </dependencies>
+
     <build>
-        <plugins>
+         <plugins>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.4.2</version>
+                <executions>
+                    <execution>
+                        <id>default-jar</id>
+                        <!--  skip building the default-jar -->
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>3.3.0</version>
                 <configuration>
+                    <finalName>semApp</finalName>
                     <archive>
                         <manifest>
                             <mainClass>com.napier.sem.App</mainClass>
@@ -469,6 +500,7 @@ First we must update our `pom.xml` file.  Add the following below the `dependenc
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
+                    <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
                 <executions>
                     <execution>
@@ -480,8 +512,10 @@ First we must update our `pom.xml` file.  Add the following below the `dependenc
                     </execution>
                 </executions>
             </plugin>
+            
         </plugins>
     </build>
+</project>
 ```
 
 We have added two new sections:
@@ -535,9 +569,9 @@ We are now explicitly connecting to the server called `mongo-dbserver`, which is
 
 ```docker
 FROM amazoncorretto:17
-COPY ./target/devops-0.1.0.1-jar-with-dependencies.jar /tmp
+COPY ./target/semApp.jar /tmp
 WORKDIR /tmp
-ENTRYPOINT ["java", "-jar", "devops-0.1.0.1-jar-with-dependencies.jar"]
+ENTRYPOINT ["java", "-jar", "semApp.jar"]
 ```
 
 We have changed what we are copying to the JAR file that has been created.  We are also changing our entry point to execute this JAR.  We need to first update our jar file, rebuild the docker image and restart the container.
@@ -577,11 +611,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v5
-      - name: Set up JDK 11
-        uses: actions/setup-java@v2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v5
         with:
           java-version: '17'
-          distribution: 'adopt'
+          distribution: 'temurin'
       - name: Setup network
         run: |
           docker network create --driver bridge se-methods

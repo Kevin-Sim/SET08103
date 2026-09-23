@@ -100,19 +100,7 @@ We also need to add plugin's so Maven can run our unit tests correctly.  **Add t
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>
-    <version>2.19.1</version>
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-surefire-provider</artifactId>
-            <version>1.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.1.0</version>
-        </dependency>
-    </dependencies>
+    <version>3.2.5</version>
 </plugin>
 ```
 
@@ -506,9 +494,9 @@ jobs:
         with:
           submodules: recursive
       - name: Set up JDK 11
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v5
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
       - name: Unit Tests
         run: mvn -Dtest=com.napier.devops.AppTest test
