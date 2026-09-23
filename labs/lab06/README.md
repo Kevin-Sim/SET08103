@@ -502,14 +502,14 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'adopt'
+          distribution: 'temurin'
       - name: Unit Tests
         run: mvn -Dtest=com.napier.devops.AppTest test
       - name: Package and Run docker compose

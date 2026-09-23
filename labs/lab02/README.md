@@ -450,8 +450,8 @@ First we must update our `pom.xml` file.  Add the following below the `dependenc
 
 ```xml
     <properties>
-        <maven.compiler.source>10</maven.compiler.source>
-        <maven.compiler.target>10</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <build>
@@ -463,7 +463,7 @@ First we must update our `pom.xml` file.  Add the following below the `dependenc
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.napier.devops.App</mainClass>
+                            <mainClass>com.napier.sem.App</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -486,13 +486,13 @@ First we must update our `pom.xml` file.  Add the following below the `dependenc
 
 We have added two new sections:
 
-1. `properties` - here we are telling Maven to produce Java 8 code (1.8).
+1. `properties` - here we are telling Maven to produce Java 17 code.
 2. `build` - there is quite a bit going on here.  You can happily reuse the code though:
     - We are defining how Maven builds the JAR file.
     - We are telling Maven which class to run when the JAR is executed (`mainClass`).
     - We are telling Maven to build the `jar-with-dependencies` - in other words pull in the MongoDB code.
 
-First rebuild your project so that everything is up to date: **Build** then **Build Project**. We can now ask Maven to package up our application.  In IntelliJ open the **Maven Panel** on the right hand side:
+First rebuild your project so that everything is up to date: **Build** then **Build Project**. We can now ask Maven to package up our application.  In IntelliJ open the **Maven Panel** on the right hand side: Note the screenshot below shows a different pom.xml
 
 ![IntelliJ with Maven Panel Open](img/intellij-maven-panel.png)
 
@@ -576,7 +576,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:

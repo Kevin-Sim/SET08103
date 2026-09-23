@@ -20,14 +20,14 @@ We are going to modify our existing *build* stage in our GitHub Actions script s
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'adopt'
+          distribution: 'temurin'
       - name: Package and Run docker compose
         run: |
           mvn package -DskipTests
@@ -66,14 +66,14 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'adopt'
+          distribution: 'temurin'
       - name: Unit Tests
         run: mvn -Dtest=com.napier.devops.AppTest test
       - name: CodeCov
@@ -89,14 +89,14 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'adopt'
+          distribution: 'temurin'
       - name: Integration Tests and CodeCov
         run: |
           docker build -t database ./db 
@@ -117,14 +117,14 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-          distribution: 'adopt'
+          distribution: 'temurin'
       - name: Package and Run docker compose
         run: |
           mvn package -DskipTests

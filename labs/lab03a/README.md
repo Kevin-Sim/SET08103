@@ -116,7 +116,7 @@ Docker Compose allows us to define a collection of containers that operate toget
 
 ### Add Database Support
 
-A Docker container [is available for MySQL](https://hub.docker.com/_/mysql/).  That is the easy part.  What we need to do is add an existing database to the container.  We can do this in a Dockerfile if we have the database on the local file system.  We can get the database from GitHub, and we can incorporate an external Git **submodule** easily.  Let us do that first.
+A Docker container [is available for MySQL](https://hub.docker.com/_/mysql/).  That is the easy part.  What we need to do is add an existing database to the container.  We can do this in a Dockerfile if we have the database on the local file system.  We can get the database from GitHub, and we can incorporate an external Git **submodule** easily.  Let us do that first. Note that for the coursework you will be using a different database that is much smaller and we will include it directly in our repository. The coursework database is available [here](https://downloads.mysql.com/docs/world-db.zip). or from one of my repositories such as https://github.com/Kevin-Sim/sem-quick-cw/tree/master The db folder contains the sql file for building the database and a Dockerfile to build the world database as a docker container. Back to the more complicated employees database.
 
 #### Git Submodules
 
@@ -319,14 +319,14 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: '17'
-          distribution: 'adopt'
+          distribution: 'temurin'
       - name: Build with Maven
         run: mvn package
       - name: Run docker compose
@@ -477,7 +477,7 @@ We are now ready to add the `Employee` class.
 
 #### Employee Class
 
-The `Employee` class is just data.  The full code listing is given below, and should be straightforward to understand.
+The `Employee` class is just data.  The full code listing is given below, and should be straightforward to understand. This is bad practice. Variables should be private and have public getters and if needed setters. There should be a constructor with parameters to set variables and a toString method. IntelliJ can create these for us.
 
 ```java
 package com.napier.devops;
@@ -652,7 +652,7 @@ OK, if this didn't work, try the following first:
 - Stop all the running containers, delete them, and delete the current `devops_db` and `devops_app` Docker images.  Then rebuild everything and restart.
 - Make sure the SQL connection string is correct and the logs from the running database and application.
 
-If this doesn't solve the problem them ask for help.
+If this doesn't solve the problem then ask for help.
 
 ### Exercise
 
