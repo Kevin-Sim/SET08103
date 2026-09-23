@@ -23,10 +23,10 @@ We are going to modify our existing *build* stage in our GitHub Actions script s
         uses: actions/checkout@v5
         with:
           submodules: recursive
-      - name: Set up JDK 11
-        uses: actions/setup-java@v2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v5
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
       - name: Package and Run docker compose
         run: |
@@ -70,9 +70,9 @@ jobs:
         with:
           submodules: recursive
       - name: Set up JDK 11
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v5
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
       - name: Unit Tests
         run: mvn -Dtest=com.napier.devops.AppTest test
@@ -93,9 +93,9 @@ jobs:
         with:
           submodules: recursive
       - name: Set up JDK 11
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v5
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
       - name: Integration Tests and CodeCov
         run: |
@@ -121,9 +121,9 @@ jobs:
         with:
           submodules: recursive
       - name: Set up JDK 11
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v5
         with:
-          java-version: '11'
+          java-version: '17'
           distribution: 'temurin'
       - name: Package and Run docker compose
         run: |
