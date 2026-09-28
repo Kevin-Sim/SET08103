@@ -1,6 +1,6 @@
 # Coursework Assessment Details
 
-Group times are available [here](groups).
+
 
 ## Coursework Proforma
 
