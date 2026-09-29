@@ -112,127 +112,19 @@ A use case typically exists within a system, or communicates with another system
 
 *Use Case 1* and *Use Case 2* both exist within the *System*.  *Use Case 2* also communicates with an external system - *Database*.
 
-## Using PlantUML in IntelliJ
+## Using DrawIO in IntelliJ
 
-There are quite a few UML diagramming tools out there.  However, we want to store our diagrams in our GitHub repository.  As Git repositories don't like binary files, we will use a textual representation via [PlantUML](http://plantuml.com/).  This is a common textual standard to describe UML diagrams and can be used to generate images.  We will do this via an IntelliJ plugin.
+There are quite a few UML diagramming tools out there.  However, we want to store our diagrams in our GitHub repository.  As Git repositories don't like binary files, we will use a textual representation via DrawIO   which can save its files as SVG files which are just XML files.
 
-### Install GraphViz
-
-To use the PlantUML plugin in IntelliJ you will first need to install GraphViz on your machine.  GraphViz is a [graph drawing tool](https://en.wikipedia.org/wiki/Graph_drawing) that several tools use to layout diagrams.  Download instructions for GraphViz are available from [here](https://www.graphviz.org/download/).  For Windows users, install the **stable release**.
-
-### Install PlantUML Plugin
-
-Next we need to install the PlantUML plugin for IntelliJ.  Go to **File**, **Settings** then **Plugins** to open the **Plugins Window**.  Search for **PlantUML**.  The plugin you want is **PlantUML integration** as shown below:
-
-![IntelliJ PlantUML Plugin](img/intellij-plugin.png)
-
-Click **Install**, then **Accept** and finally **Restart IDE**.  Once IntelliJ has restarted, PlantUML should be available.
-
-### Creating a Use Case Diagram
-
-To see the PlantUML is set up correctly we need to create a diagram.  **Right click** on the **use-cases folder**, select **New**, and the **UML Use Case**.  Give it the name **HR System** and click **OK**.  This should provide you with the following window:
-
-![IntelliJ PlantUML Diagram](img/intellij-use-case.png)
-
-**If you don't see screen as above a couple of things to check**:
-
-- did you install GraphViz?
-- if so, open the settings for PlantUML (click the small spanner above where the diagram should be), and browse for the **dot** executable which will be where you installed GraphViz.
-
-### PlantUML Syntax
-
-A more comprehensive guide is available [here](http://plantuml.com/PlantUML_Language_Reference_Guide.pdf).  We will examine the basics.
-
-A PlantUML file starts and ends with the following:
-
-```
-@startuml
-
-@enduml
-```
-
-We define a use case as follows:
-
-```
-usecase "Use Case"
-```
-
-We can also provide a name for the use case.  This makes it easier to connect them later:
-
-```
-usecase UC1 as "Use Case 1"
-usecase UC2 as "Use Case 2"
-```
-
-Actors are defined as follows:
-
-```
-actor "Actor"
-```
-
-And they can likewise be named:
-
-```
-actor A1 as "Actor 1"
-actor A2 as "Actor 2"
-```
-
-There are numerous methods to lay out arrows - [see the tutorial](http://plantuml.com/PlantUML_Language_Reference_Guide.pdf).  For example:
-
-```
-actor A1 as "Actor 1"
-usecase UC1 as "Use Case 1"
-
-A1 --> UC1
-```
-
-Systems can be defined using rectangles:
-
-```
-rectangle Database
-
-rectangle System {
-    usecase UC1 as "Use Case 1"
-    UC1 --> Database
-}
-```
-
-Anything defined within the rectangle curly braces are part of the `System`.
-
-### Diagram for Use Case 4
-
-Let us look at an example from our system.  Below is use case 4:
-
-```
-@startuml
-
-actor HR as "HR Advisor"
-
-rectangle Database
-
-rectangle "HR System" {
-    usecase UC4 as "Get salaries
-    by role"
-    
-    usecase UCa as "Print salaries"
-    
-    HR - UC4
-    UC4 ..> UCa : include
-    UC4 - Database
-}
-
-@enduml
-```
-
-This will produce the following diagram:
-
-![HR System Use Case Diagram](img/hr-system.png)
-
-### Exercise: Complete the Use Case Diagram
+### Install the DrawIO plugin or use DrawIO.com
 
 Your task now is to complete the use case diagram for the entire set of use cases defined.  You only need one diagram for all the cases. Again, work with your team, and seek feedback.  We will revisit various parts of the diagram throughout the module so you can adjust as you are going along.
 
+Do not create a use case for ever report. Group them be report type. City Reports, Country Reports etc. The actual list of Reports should be included in the Use Case description file.
+
 ## Next Feature: Salary By Role
+
+We used to use Zube for Kanban boards but it has a free limit of 4 users so we are just going to use a Kanban board on GitHub projects for the coursework. You can use Zube for your labs if you wish.
 
 Now it is time to work on our next feature - user story 4: As an *HR advisor* I want *to produce a report on the salary of employees of a given role* so that *I can support financial reporting of the organisation.*
 
