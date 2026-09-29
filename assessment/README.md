@@ -209,9 +209,9 @@ The following must be in place:
 
 -  Issues being used on GitHub.
 -  Tasks defined as user stories.
--  Project integrated with Zube.io.
+-  Issues integrated with GitHub Projects (Kanban).
 -  Kanban/Project Board being used.
--  Sprint Boards being used.
+-  Evidence of Sprints being used.
 -  Full use cases defined.
 -  Use case diagram created.
 
