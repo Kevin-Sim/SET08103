@@ -130,7 +130,7 @@ Our next feature is getting salary by department.  This is similar to the featur
 
 Our feature requires a new class - `Department`.  If we examine the [database schema](https://dev.mysql.com/doc/employee/en/sakila-structure.html) below we see that a department has two links to `Employee` - one as a collection of workers and another as a manager of a department.
 
-![Employees Database Schema](https://dev.mysql.com/doc/employee/en/images/employees-schema.png)
+![Employees Database Schema](img/employees-schema.png)
 
 Our class diagram will make this evident as we progress.  First, **add a new class `Department` to your diagram** by **right-clicking in the window** and selecting **New then Class**.  Call the class `Department`.  You should end up with the following:
 
