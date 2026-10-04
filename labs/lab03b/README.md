@@ -5,7 +5,7 @@ In this lab we will extend our initial user stories into fuller use cases, tryin
 ## Behavioural Objectives
 
 - [ ] **Define use cases** using *Cockburn's Use Case Template*.
-- [ ] **Define use case diagrams** using *PlantUML*.
+- [ ] **Define use case diagrams** using *DrawIO*.
 
 ## Our Current User Stories
 
@@ -102,7 +102,7 @@ Use cases can also relate to each other, typically in **include** and **extend**
 
 ![Extend Use Case](img/plantuml-extend.png)
 
-An *include* relationship is one where a use case includes (i.e. *uses*) another use case to perform its functionality. An *extend* relationship is one where a use case extends (e.g. supports an edge-case) from another use case.  It provides a special version.  These should have been identified in the **Extensions** section of the use case.
+An *include* relationship is one where a use case includes (i.e. *uses*) another use case to perform its functionality). An *extend* relationship is one where a use case extends (e.g. supports an edge-case) from another use case.  It provides a special version.  These should have been identified in the **Extensions** section of the use case.
 
 #### System
 
@@ -131,12 +131,12 @@ Now it is time to work on our next feature - user story 4: As an *HR advisor* I 
 Remember the steps you took last week for executing a Sprint:
 
 1. Decide which user story/stories to work on for the next Sprint.
-2. Create a new Sprint on Zube.
-3. Add the user story card(s) to the Ready column in Zube.
-4. Add any additional task cards to Zube and put in priority order.
+2. Create a new Sprint on GitHub Projects.
+3. Add the user story card(s) to the Ready column in GitHub Projects.
+4. Add any additional task cards to GitHub Projects and put in priority order.
 5. Pull the latest `develop` branch.
 6. Start a new feature branch for the task(s) or user story.
-7. Select task to work on in Zube.
+7. Select task to work on in GitHub Projects.
 8. Work on task.
 
 We only have one task to do this week: get the salaries by department.  This is very similar to the last feature - get all salaries - but with an additional restriction.  Therefore it is your task to implement this feature on your own.
