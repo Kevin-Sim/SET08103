@@ -228,7 +228,7 @@ The following criteria will be assessed for overall quality:
 
 ### Code Review 3
 
-#### REVIEW MEETING: Lab of of Week 10 
+#### REVIEW MEETING: Lab of of Week 9
 
 The aim of this code review is to check that testing has been correctly specified.  At this stage, at least 50% of the work of the project should be completed.
 
