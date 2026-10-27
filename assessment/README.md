@@ -138,7 +138,7 @@ Regulations.</strong></td>
 ## Coursework Specification
 
 You will work on the project as a Scrum team. Details on Scrum are
-provided in [Unit01b](../units/unit01/unit01b), including an FAQ on how
+provided in [Unit01b](../units/unit01/unit01b.md), including an FAQ on how
 to apply Scrum in the module.
 
 You work for an organisation that requires reporting on population
